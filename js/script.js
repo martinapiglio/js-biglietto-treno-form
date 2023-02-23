@@ -27,30 +27,40 @@ generaButton.addEventListener('click', function() {
 
     let finalPrice
 
-    if (userAge < 18) {
-
-        finalPrice = fullPrice - fullPrice * 20 / 100;
-        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
-        document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto under 18";
-
-    } else if (userAge >= 65) {
-
-        finalPrice = fullPrice - fullPrice * 40 / 100;
-        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
-        document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto over 65";
-
-    } else {
-
-        finalPrice = fullPrice;
-        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
-        document.getElementById('ticketOffer').innerHTML = "Biglietto Standard";
-    }
+        if (userAge < 18) {
     
-    document.getElementById('ticketUserName').innerHTML = userName.value;
-    //document.getElementById('ticketUserWagon').innerHTML = 
-    //document.getElementById('ticketUserCode').innerHTML = 
+            finalPrice = fullPrice - fullPrice * 20 / 100;
+            document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+            document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto under 18";
+    
+        } else if (userAge >= 65) {
+    
+            finalPrice = fullPrice - fullPrice * 40 / 100;
+            document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+            document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto over 65";
+    
+        } else {
+    
+            finalPrice = fullPrice;
+            document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+            document.getElementById('ticketOffer').innerHTML = "Biglietto Standard";
+        }
+        
+        document.getElementById('ticketUserName').innerHTML = userName.value;
+    
+        let wagonNumber = Math.floor((Math.random() * 10) + 1);
+        let codeNumber = Math.floor((Math.random() * 100000) + 1);
+    
+        document.getElementById('ticketWagon').innerHTML = wagonNumber
+        document.getElementById('ticketCode').innerHTML = codeNumber
+    
+      });
 
-  });
+
+
+
+
+
 
 
 
