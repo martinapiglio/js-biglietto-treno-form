@@ -30,23 +30,25 @@ generaButton.addEventListener('click', function() {
     if (userAge < 18) {
 
         finalPrice = fullPrice - fullPrice * 20 / 100;
-        console.log(finalPrice);
+        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+        document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto under 18";
 
     } else if (userAge >= 65) {
 
         finalPrice = fullPrice - fullPrice * 40 / 100;
-        console.log(finalPrice);
+        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+        document.getElementById('ticketOffer').innerHTML = "Biglietto Ridotto over 65";
 
     } else {
 
         finalPrice = fullPrice;
-        console.log(finalPrice);
+        document.getElementById('ticketPrice').innerHTML = finalPrice.toFixed(2) + '€';
+        document.getElementById('ticketOffer').innerHTML = "Biglietto Standard";
     }
-
-
-
     
     document.getElementById('ticketUserName').innerHTML = userName.value;
+    //document.getElementById('ticketUserWagon').innerHTML = 
+    //document.getElementById('ticketUserCode').innerHTML = 
 
   });
 
